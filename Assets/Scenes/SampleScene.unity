@@ -627,6 +627,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 80, y: 80}
   m_EdgeRadius: 0
+--- !u!114 &872569888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872569885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036f5972885c4c47857d3624e6849231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  continerTrans: {fileID: 0}
 --- !u!1 &876796005 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8368439728583261162, guid: 82926323f7f424849a762edd2a075740, type: 3}
@@ -683,6 +696,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 60, y: 60}
   m_EdgeRadius: 0
+--- !u!114 &876796008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876796005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036f5972885c4c47857d3624e6849231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  continerTrans: {fileID: 0}
 --- !u!1 &941672156
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,6 +989,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 80, y: 80}
   m_EdgeRadius: 0
+--- !u!114 &1492502870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492502867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036f5972885c4c47857d3624e6849231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  continerTrans: {fileID: 0}
 --- !u!224 &1700470989 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4627140921386440970, guid: bcaca861663b07440a762cdaf66154d6, type: 3}
@@ -1024,21 +1063,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 398093660230763014, guid: 82926323f7f424849a762edd2a075740, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 523682577352562756, guid: 82926323f7f424849a762edd2a075740, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 523682577352562756, guid: 82926323f7f424849a762edd2a075740, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 523682577352562756, guid: 82926323f7f424849a762edd2a075740, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 282.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 523682577352562756, guid: 82926323f7f424849a762edd2a075740, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -87.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 579750682864783639, guid: 82926323f7f424849a762edd2a075740, type: 3}
       propertyPath: m_IsActive
@@ -1238,7 +1281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8368439728583261162, guid: 82926323f7f424849a762edd2a075740, type: 3}
       propertyPath: m_TagString
-      value: GamePlayOptation
+      value: GamePlayOpration
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1260,12 +1303,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5960199602387699654, guid: 82926323f7f424849a762edd2a075740, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1492502869}
+    - targetCorrespondingSourceObject: {fileID: 5960199602387699654, guid: 82926323f7f424849a762edd2a075740, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1492502870}
     - targetCorrespondingSourceObject: {fileID: 8368439728583261162, guid: 82926323f7f424849a762edd2a075740, type: 3}
       insertIndex: -1
       addedObject: {fileID: 876796007}
+    - targetCorrespondingSourceObject: {fileID: 8368439728583261162, guid: 82926323f7f424849a762edd2a075740, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 876796008}
     - targetCorrespondingSourceObject: {fileID: 1623772985512042060, guid: 82926323f7f424849a762edd2a075740, type: 3}
       insertIndex: -1
       addedObject: {fileID: 872569887}
+    - targetCorrespondingSourceObject: {fileID: 1623772985512042060, guid: 82926323f7f424849a762edd2a075740, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 872569888}
     - targetCorrespondingSourceObject: {fileID: 4941897729857952137, guid: 82926323f7f424849a762edd2a075740, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1968056874052446463}
@@ -1319,7 +1371,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1310, y: 860}
+  m_Size: {x: 1150, y: 710}
   m_EdgeRadius: 0
 --- !u!1001 &3360158970694220325
 PrefabInstance:
