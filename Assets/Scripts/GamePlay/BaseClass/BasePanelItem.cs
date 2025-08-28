@@ -8,6 +8,8 @@ namespace GamePlay.BaseClass
     {
         private const string PanelTag = "GamePlayPanel";
         private const string OprationTag = "GamePlayOpration";
+        private const string OprationItemTag = "GamePlayOprationItem";
+        private const string GamePlayItemTag = "GamePlayItem";
         private const string GamePlayTag = "GamePlay";
 
         public TextMeshProUGUI text;
@@ -16,15 +18,17 @@ namespace GamePlay.BaseClass
         private Vector3 _offsetPos;
         private string _value;
         private bool _inPanel;
+        private Transform _initParent;
 
         private void Start()
         {
             _initPos = transform.position;
+            _initParent = transform.parent;
         }
 
-        public void InitData(int value)
+        public void InitData(string value)
         {
-            _value = value.ToString();
+            _value = value;
             text.text = _value;
         }
 
@@ -76,26 +80,27 @@ namespace GamePlay.BaseClass
             {
                 case GamePlayTag:
                     Debug.Log("SoltTag is GamePlay");
-                    if (gameObject.CompareTag(GamePlayTag))
+                    if (gameObject.CompareTag(GamePlayItemTag))
                     {
                         _soltPos = other.transform.position;
+                        other.GetComponent<SoltItem>().SetParentWithContiner(transform);
                         _inPanel = false;
                     }
 
                     break;
                 case OprationTag:
                     Debug.Log("SoltTag is GamePlayOpration");
-                    if (gameObject.CompareTag(OprationTag))
+                    if (gameObject.CompareTag(OprationItemTag))
                     {
                         _soltPos = other.transform.position;
+                        other.GetComponent<SoltItem>().SetParentWithContiner(transform);
                         _inPanel = false;
                     }
                     break;
                 case PanelTag:
                     Debug.Log("SoltTag is GamePlayPanel");
-
                     _inPanel = true;
-
+                    transform.SetParent(_initParent);
                     break;
             }
 

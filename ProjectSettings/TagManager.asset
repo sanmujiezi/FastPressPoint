@@ -5,8 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - GamePlay
-  - GamePlayOptation
   - GamePlayPanel
+  - GamePlayOpration
+  - GamePlayItem
+  - GamePlayOprationItem
   layers:
   - Default
   - TransparentFX

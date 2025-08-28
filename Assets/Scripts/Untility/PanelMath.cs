@@ -22,17 +22,15 @@
             switch (op)
             {
                 case "+":
-                    
-                    break;
+                    return a + b;
                 case "-":
-                    
-                    break;
+                    return a - b;
                 case "*":
-                    
-                    break;
+                    return a * b;
                 case "/":
-                    
-                    break;
+                    return a / b;
+                default:
+                    return -1;
             }
         }
 

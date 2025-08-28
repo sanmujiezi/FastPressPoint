@@ -1,7 +1,8 @@
 ﻿using DefaultNamespace;
 using GamePlay.BaseClass;
+using GamePlay.Event;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 namespace GamePlay
 {
@@ -19,6 +20,7 @@ namespace GamePlay
         {
             child.SetParent(continerTrans);
             _panelItem = child.GetComponent<PanelItem>();
+            EventCenter.Instance.TriggerEvent(nameof(GameEventDefine.PanelSoltOn));
         }
 
         public bool HasItem()
