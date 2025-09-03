@@ -12,19 +12,27 @@ namespace GamePlay
         public SoltItem numItem2;
         public SoltItem oprationItem;
         public TextMeshProUGUI resultText;
+        private int _value;
 
         private void Start()
         {
-            EventCenter.Instance.AddListenerEvent(nameof(GameEventDefine.PanelSoltOn),UpdateResultText);
-            UpdateResultText(null);
+            UpdateResultText();
         }
 
-        private void OnDestroy()
+        public int GetItemValue()
         {
-            EventCenter.Instance.RemoveListenerEvent(nameof(GameEventDefine.PanelSoltOn),UpdateResultText);
+            return _value;
         }
 
-        private void UpdateResultText(object obj)
+        public void OnPanelSoltOn()
+        {
+            numItem1.CheckItem();
+            numItem2.CheckItem();
+            oprationItem.CheckItem();
+            UpdateResultText();
+        }
+
+        private void UpdateResultText()
         {
             var result = ComputeNum();
             if (result == -1)
@@ -32,11 +40,22 @@ namespace GamePlay
                 SetResultText("0");
                 return;
             }
+
             SetResultText(result.ToString());
         }
 
         private void SetResultText(string content)
         {
+            try
+            {
+                _value = int.Parse(content);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("类型转换错误" + e);
+                throw;
+            }
+
             resultText.text = content;
         }
 
@@ -47,7 +66,7 @@ namespace GamePlay
             var oprationS = oprationItem.GetItemValue();
             if (oprationS == null)
             {
-                return -1;
+                oprationS = "+";
             }
 
             if (num1S == null)
@@ -59,13 +78,10 @@ namespace GamePlay
             {
                 num2S = "0";
             }
-            
+
             int num1Int = int.Parse(num1S);
             int num2Int = int.Parse(num2S);
-            return PanelMath.Instance.Compute(num1Int,num2Int,oprationS);
+            return PanelMath.Instance.Compute(num1Int, num2Int, oprationS);
         }
-        
-        
-        
     }
 }

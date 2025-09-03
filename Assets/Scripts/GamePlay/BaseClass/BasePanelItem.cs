@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using GamePlay.Event;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -79,40 +80,48 @@ namespace GamePlay.BaseClass
             switch (tagStr)
             {
                 case GamePlayTag:
-                    Debug.Log("SoltTag is GamePlay");
                     if (gameObject.CompareTag(GamePlayItemTag))
                     {
-                        _soltPos = other.transform.position;
-                        other.GetComponent<SoltItem>().SetParentWithContiner(transform);
-                        _inPanel = false;
+                        Debug.Log("SoltTag is GamePlay");
+                        var soltItem = other.GetComponent<SoltItem>();
+                        if (!soltItem.HasItem())
+                        {
+                            soltItem.SetParentWithContiner(transform);
+                            _soltPos = other.transform.position;
+                        }
                     }
+
+                    _inPanel = false;
 
                     break;
                 case OprationTag:
-                    Debug.Log("SoltTag is GamePlayOpration");
                     if (gameObject.CompareTag(OprationItemTag))
                     {
-                        _soltPos = other.transform.position;
-                        other.GetComponent<SoltItem>().SetParentWithContiner(transform);
-                        _inPanel = false;
+                        Debug.Log("SoltTag is GamePlayOpration");
+                        var soltItem = other.GetComponent<SoltItem>();
+                        if (!soltItem.HasItem())
+                        {
+                            soltItem.SetParentWithContiner(transform);
+                            _soltPos = other.transform.position;
+                        }
                     }
+                    _inPanel = false;
+
                     break;
                 case PanelTag:
                     Debug.Log("SoltTag is GamePlayPanel");
                     _inPanel = true;
                     transform.SetParent(_initParent);
+                    EventCenter.Instance.TriggerEvent(nameof(GameEventDefine.PanelSoltOn));
                     break;
             }
-
-            Debug.Log("Can use list Add" + other.gameObject.name);
         }
-        
+
         private void OnTriggerStay2D(Collider2D other)
         {
             if (_inPanel)
             {
                 _soltPos = transform.position;
-                Debug.Log("OnPanel");
             }
         }
 

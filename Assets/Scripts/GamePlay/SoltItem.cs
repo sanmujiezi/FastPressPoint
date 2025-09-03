@@ -1,4 +1,5 @@
-﻿using DefaultNamespace;
+﻿using System;
+using DefaultNamespace;
 using GamePlay.BaseClass;
 using GamePlay.Event;
 using UnityEngine;
@@ -10,7 +11,15 @@ namespace GamePlay
     {
         public Transform continerTrans;
         private BasePanelItem _panelItem;
-        
+
+        public void CheckItem()
+        {
+            if (!HasItem())
+            {
+                _panelItem = null;
+            }
+        }
+
         public Transform GetContiner()
         {
             return continerTrans;

@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.39404595, g: 0.6347424, b: 0.7264151, a: 1}
+  m_Color: {r: 0.7254902, g: 0.6862199, b: 0.39215687, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -386,7 +386,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 120, y: 120}
+  m_Size: {x: 50, y: 50}
   m_EdgeRadius: 0
 --- !u!50 &3381613797708075954
 Rigidbody2D:
