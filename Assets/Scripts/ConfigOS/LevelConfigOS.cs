@@ -11,6 +11,15 @@ public class LevelConfigOS : ScriptableObject
 [System.Serializable]
 public class LevelInfo
 {
+    public int levelID;
     public int timeLimit;
     public int scoreLimit;
+    public List<LevelBlockInfo> blockInfos = new();
+}
+
+[System.Serializable]
+public class LevelBlockInfo
+{
+    public string nums;
+    public int count;
 }

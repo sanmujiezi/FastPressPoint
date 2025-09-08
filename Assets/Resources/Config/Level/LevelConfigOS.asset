@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: LevelConfigOS
   m_EditorClassIdentifier: 
   levelInfos:
-  - timeLimit: 5
+  - levelID: 0
+    timeLimit: 20
     scoreLimit: 20
+    blockInfos:
+    - nums: 10
+      count: 4
+    - nums: 10
+      count: 2

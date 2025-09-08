@@ -995,6 +995,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &984481238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5368524991918820747, guid: 894c2d776e7fa6c44854a38710a4d8c6, type: 3}
+  m_PrefabInstance: {fileID: 3360158970694220325}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1103030136 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7815883658816315128, guid: 894c2d776e7fa6c44854a38710a4d8c6, type: 3}
@@ -1155,6 +1166,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1222259506 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7984396420374561490, guid: bcaca861663b07440a762cdaf66154d6, type: 3}
+  m_PrefabInstance: {fileID: 4416208285727563357}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1229231205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,7 +1782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b93f048552947cd9bd1d258c831c5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countText: {fileID: 0}
+  countText: {fileID: 1222259506}
 --- !u!1001 &1968056874052446461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1790,6 +1812,10 @@ PrefabInstance:
       value: UIGamePanel
       objectReference: {fileID: 0}
     - target: {fileID: 4046109338431111598, guid: 82926323f7f424849a762edd2a075740, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941897729857952137, guid: 82926323f7f424849a762edd2a075740, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -1906,6 +1932,14 @@ PrefabInstance:
       propertyPath: targetText
       value: 
       objectReference: {fileID: 1103030136}
+    - target: {fileID: 8403344095958689014, guid: 894c2d776e7fa6c44854a38710a4d8c6, type: 3}
+      propertyPath: precentText
+      value: 
+      objectReference: {fileID: 984481238}
+    - target: {fileID: 8403344095958689014, guid: 894c2d776e7fa6c44854a38710a4d8c6, type: 3}
+      propertyPath: sliderMoveSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8469899187615756265, guid: 894c2d776e7fa6c44854a38710a4d8c6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2134,11 +2168,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1197199021760163707, guid: bcaca861663b07440a762cdaf66154d6, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1197199021760163707, guid: bcaca861663b07440a762cdaf66154d6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3173849421538654476, guid: bcaca861663b07440a762cdaf66154d6, type: 3}
       propertyPath: m_HorizontalScrollbar
@@ -2226,15 +2260,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5218107468209674880, guid: bcaca861663b07440a762cdaf66154d6, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5218107468209674880, guid: bcaca861663b07440a762cdaf66154d6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5218107468209674880, guid: bcaca861663b07440a762cdaf66154d6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7984396420374561490, guid: bcaca861663b07440a762cdaf66154d6, type: 3}
+      propertyPath: m_text
+      value: 'Count: -1'
       objectReference: {fileID: 0}
     - target: {fileID: 8983090818164087255, guid: bcaca861663b07440a762cdaf66154d6, type: 3}
       propertyPath: m_Name
@@ -2242,7 +2280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8983090818164087255, guid: bcaca861663b07440a762cdaf66154d6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

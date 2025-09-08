@@ -34,13 +34,14 @@ namespace GamePlay
             }
         }
 
-        public void InitLevelData(float limiteTime, int targetScore)
+        public void InitLevelData(int levelID,float limiteTime, int targetScore)
         {
             Instance = this;
             _limitTime = limiteTime;
             _currentTime = limiteTime;
             _targetScore = targetScore;
             _currentScore = 0;
+            LevelOprationCreater.Instance.CreateLevelOpration(levelID);
         }
 
         public void AddTime(float time)

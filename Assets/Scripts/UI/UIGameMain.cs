@@ -1,5 +1,6 @@
 using System;
 using DefaultNamespace.UI.Base;
+using GamePlay;
 using GamePlay.BaseClass;
 using GamePlay.Event;
 using TMPro;
@@ -12,12 +13,24 @@ namespace DefaultNamespace.UI
     {
         public TextMeshProUGUI timeText;
         public TextMeshProUGUI targetText;
+        public TextMeshProUGUI precentText;
         public Slider scoreSlider;
-        private float _sliderMoveSpeed;
+        public float sliderMoveSpeed;
 
         private void Start()
         {
             ListenerEvent();
+        }
+
+        private void Update()
+        {
+            if (GameLevelManager.Instance != null)
+            {
+                var curScore = GameLevelManager.Instance.GetCurrentScore();
+                var targetScore = GameLevelManager.Instance.GetTargetScore();
+                SetSliderProgress(curScore / targetScore);
+                precentText.text = $"{curScore}/{targetScore}";
+            }
         }
 
         private void OnDestroy()
@@ -29,6 +42,8 @@ namespace DefaultNamespace.UI
             EventCenter.Instance.AddListenerEvent(nameof(GameEventDefine.GameLevelCurTime),OnGameLevelCurTime);
             EventCenter.Instance.AddListenerEvent(nameof(GameEventDefine.GameLevelInfo),OnGameLevelInfo);
         }
+        
+        
 
         private void OnGameLevelInfo(object obj)
         {
@@ -68,7 +83,7 @@ namespace DefaultNamespace.UI
 
         private void SetSliderProgress(float progress)
         {
-            scoreSlider.value = Mathf.Lerp(scoreSlider.value,progress,_sliderMoveSpeed * Time.deltaTime);
+            scoreSlider.value = Mathf.Lerp(scoreSlider.value,progress,sliderMoveSpeed * Time.deltaTime);
         }
         
         public string FormatTime(float seconds)

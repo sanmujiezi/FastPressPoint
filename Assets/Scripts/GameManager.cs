@@ -15,6 +15,7 @@ namespace DefaultNamespace
         public GameObject uiGameEnd;
         public GameObject uiFinishGamePopup;
         [Header("编辑器UI")] public GameObject uiEditorGame;
+        private int _levelID = 0;
 
         private void Awake()
         {
@@ -57,7 +58,7 @@ namespace DefaultNamespace
             uiGameMain.SetActive(true);
             uiGamePanel.SetActive(true);
             
-            var levelInfo = LoadLevelInfo(0);
+            var levelInfo = LoadLevelInfo(_levelID);
             if (levelInfo == null)
             {
                 Debug.LogError("LevelInfo is null");
@@ -66,7 +67,7 @@ namespace DefaultNamespace
             
             var levelManager = new GameObject("[Runtime]GameLevelManager");
             var levelManager_S = levelManager.AddComponent<GameLevelManager>();
-            levelManager_S.InitLevelData(levelInfo.timeLimit,levelInfo.scoreLimit);
+            levelManager_S.InitLevelData(_levelID,levelInfo.timeLimit,levelInfo.scoreLimit);
             levelManager_S.StartLevel();
             EventCenter.Instance.TriggerEvent(nameof(GameEventDefine.GameLevelInfo),new GameEventDefine.GameLevelInfo{ time = levelInfo.timeLimit ,score = levelInfo.scoreLimit});
         }
